@@ -154,7 +154,7 @@ function ExpenseList() {
                   Add new
                 </Link>
               </h3>
-              <div className="mb-3">
+              <div className="mb-2">
                 <h5>Filter By</h5>
 
                 <select
@@ -221,7 +221,7 @@ function ExpenseList() {
                 <tbody>
                   {expenses.length
                     ? expenses.map((expense, index) => (
-                        <tr>
+                        <tr key={index}>
                           <th scope="row">{index + 1}</th>
                           <td>{expense.category.category_name}</td>
                           <td>{expense.amount}</td>
@@ -243,7 +243,7 @@ function ExpenseList() {
                           </td>
                         </tr>
                       ))
-                    : <p>No Results Found</p>}
+                    : null}
                 </tbody>
               </table>
               </div>
